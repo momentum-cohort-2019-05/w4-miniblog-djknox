@@ -13,6 +13,7 @@ def index(request):
 class BlogListView(generic.ListView):
     model = Blog
     paginate_by = 5
+    ordering = ['-created_date']
 
 
 class BlogDetailView(generic.DetailView):

@@ -44,6 +44,9 @@ class Blog(models.Model):
         """Returns the url to access a detail record for this blog."""
         return reverse('blog-detail', args=[str(self.id)])
 
+    class Meta:
+        ordering = ['-created_date',]
+
 
 class Comment(models.Model):
     """Model representing a comment."""
@@ -55,4 +58,7 @@ class Comment(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return self.text
+
+    class Meta:
+        ordering = ['created_date',]
 
