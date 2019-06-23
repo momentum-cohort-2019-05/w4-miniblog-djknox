@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
+from django.template.defaultfilters import truncatechars
 
 
 class Author(models.Model):
@@ -57,7 +58,7 @@ class Comment(models.Model):
     
     def __str__(self):
         """String for representing the Model object."""
-        return self.text
+        return truncatechars(self.text, 75)
 
     class Meta:
         ordering = ['created_date',]

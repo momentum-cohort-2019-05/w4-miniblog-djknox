@@ -17,7 +17,7 @@
     {% for comment in blog.comment_set.all %}
       <hr>
       <p>
-          {{ comment.author.user.username }} ({{ comment.created_date }}) - {{ comment }}
+          {{ comment.author.user.username }} ({{ comment.created_date }}) - {{ comment.text }}
       </p>
     {% endfor %}
     {% if user.is_authenticated %}

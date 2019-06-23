@@ -8,7 +8,7 @@
     <h4>Blogs list</h4>
     <ul>
         {% for blog in author.blog_set.all %}
-        <li><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a> ({{ blog.created_date }})</li>
+        <li><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a> ({{ blog.created_date.date }})</li>
         {% endfor %}
     </ul>
   </div>
